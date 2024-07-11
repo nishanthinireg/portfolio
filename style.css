@@ -129,12 +129,14 @@ nav ul li a:hover::after {
 #services {
   padding: 30px 0;
 }
+
 .certif-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
 }
+
 .certif-list div {
   background: #262626;
   padding: 40px;
@@ -142,33 +144,39 @@ nav ul li a:hover::after {
   font-weight: 300;
   border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
+  border: 4px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, blue, rgb(248, 3, 215));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.certif-list div:hover {
+  transform: translateY(-10px);
+  background-color: #4b0082;
+  box-shadow: 0 8px 16px rgb(2, 244, 208);
+}
+
 .certif-list div h2 {
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
 }
-.certif-list div a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 12px;
-  margin-top: 20px;
-  display: inline-block;
-}
-.certif-list div:hover {
-  background: blue;
-  transform: translateY(-10px);
+
+.certif-list div p {
+  margin-bottom: 20px;
 }
 
 <!-----------------projects------------- ----------------- > #project {
   padding: 30px 0;
 }
+
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
 }
+
 .project-list div {
   background: #262626;
   padding: 40px;
@@ -176,77 +184,140 @@ nav ul li a:hover::after {
   font-weight: 300;
   border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 6px 20px rgba(0, 0, 0, 0.19);
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, blue, rgb(248, 3, 215));
+  border-image-slice: 1;
 }
+
+.project-list div:hover {
+  transform: translateY(-10px);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2),
+    0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
 .project-list div h2 {
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
 }
+
+.project-list div p {
+  margin-bottom: 20px;
+}
+
 .project-list div a {
   text-decoration: none;
   color: #fff;
   font-size: 12px;
   margin-top: 20px;
   display: inline-block;
+  padding: 10px 20px;
+  background-color: burlywood;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.project-list div a:hover {
+  background-color: #ff7f25;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .project-list div:hover {
-  background: blue;
   transform: translateY(-10px);
+  background-color: #4b0082;
+  box-shadow: 0 8px 16px rgb(2, 244, 208);
 }
-<!---------------contact------------ > .contact-left {
-  flex-basis: 35%;
+
+.center {
+  text-align: center;
 }
+
+<!---------------contact------------ > .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+}
+
+.contact-left {
+  flex: 1;
+}
+
 .contact-right {
-  flex-basis: 60%;
-}
-.contact-left p {
-  margin-top: 30px;
-}
-.contact-left img {
-  display: flex;
+  flex: 1;
 }
 
-.contact-left img:hover {
-  color: #ff004f;
-  transform: translateY(-5px);
+.contact-right form {
+  text-align: center; /* Center align form elements */
 }
-.btn2 {
-  display: inline-block;
-  background: #ff004f;
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
+
+.contact-right form input,
+.contact-right form textarea,
+.contact-right form button {
+  display: block;
+  margin: 0 auto 10px; /* Center align form elements vertically */
 }
-.cv {
-  text-decoration: none;
-  color: #fff;
-}
+
+.btn2,
 .btn1 {
-  display: inline-block;
-  background: #ff004f;
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-}
-form input,
-form textarea {
-  width: 250px;
-  border: 0;
-  outline: none;
-  background: #262626;
-  padding: 15px;
-  margin: 15px 0;
+  background-color: #ff7f25;
   color: #fff;
-  font-size: 18px;
-  border-radius: 6px;
-}
-.iit {
-  display: flex;
-}
-.iiit {
-  display: flex;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
 }
 
+.btn2:hover,
+.btn1:hover {
+  background-color: #e66000;
+}
+
+.cv {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cv:hover {
+  text-decoration: underline;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ff7f25;
+  box-shadow: 0 0 5px rgba(255, 127, 37, 0.5);
+}
+
+.btn1 {
+  background-color: #ff7f25;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn1:hover {
+  background-color: #e66000;
+}
 @media only screen and (max-width: 600px) {
   .header {
     background-image: url(pic.png);
